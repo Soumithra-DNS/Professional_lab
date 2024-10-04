@@ -41,7 +41,7 @@ public class StudentList {
             System.out.println("Loading data ...");
             try {
                 BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("students.txt", true));
-                String t = args[0].substring(1);
+                String word = args[0].substring(1);
                 Date date = new Date();
                 String dateFormetSample = "dd/mm/yyyy-hh:mm:ss a";
                 DateFormat dateFormat = new SimpleDateFormat(dateFormetSample);
@@ -61,8 +61,8 @@ public class StudentList {
                 String words[] = fileContents.split(",");
                 boolean done = false;
                 String word = args[0].substring(1);
-                for (int idx = 0; idx < i.length && !done; idx++) {
-                    if (i[idx].equals(word)) {
+                for (int idx = 0; idx < words.length && !done; idx++) {
+                    if (words[idx].equals(word)) {
                         System.out.println("We found it!");
                         done = true;
                     }
